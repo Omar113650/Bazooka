@@ -1,17 +1,18 @@
 {
   "name": "bazooka",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "OMAR ELHELALY",
-  "engines": {
-    "node": "22"
-  },
   "license": "ISC",
-  "description": "",
+  "engines": {
+    "node": "20"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cloudinary": "^2.7.0",
@@ -39,5 +40,8 @@
     "twilio": "^5.8.0",
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
   }
 }
