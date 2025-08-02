@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\BAZOOKA\\logs\\.ff9b3612b3997774a992ff77b75a9463dd1efdb8-audit.json",
+    "files": [
+        {
+            "date": 1753903496691,
+            "name": "D:\\BAZOOKA\\logs\\app-2025-07-30.log",
+            "hash": "5868744fa9bcc7157c5fb07fecc28605c608e25020de2e93834c498d6d8171b7"
+        }
+    ],
+    "hashType": "sha256"
+}
