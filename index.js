@@ -42,7 +42,7 @@ app.use(passport.session());
 import authRoutes from "./Routes/AuthRoutes.js";
 import product from "./Routes/ProductsRoutes.js";
 import categoryRoutes from "./Routes/CategoryRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";
+import orderRoutes from "./Routes/orderRoutes.js";
 import paymentRoutes from "./Routes/index.js";
 import webhookRoute from "./Routes/stripeWebhook.js";
 import addressRoutes from "./Routes/AddressRoutes.js";
