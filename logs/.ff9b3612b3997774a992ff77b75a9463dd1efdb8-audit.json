@@ -9,6 +9,11 @@
             "date": 1753903496691,
             "name": "D:\\BAZOOKA\\logs\\app-2025-07-30.log",
             "hash": "5868744fa9bcc7157c5fb07fecc28605c608e25020de2e93834c498d6d8171b7"
+        },
+        {
+            "date": 1754133966878,
+            "name": "D:\\BAZOOKA\\logs\\app-2025-08-02.log",
+            "hash": "16bf4a5dbf77f85d2ff52f493ebd915d341639ce62f4d86ba42cf5465b18e896"
         }
     ],
     "hashType": "sha256"

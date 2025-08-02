@@ -8,7 +8,7 @@ import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 import morgan from "morgan";
-import{notfound,errorHandler} from "./middleware/error.js"
+import { notfound, errorHandler } from "./middleware/error.js";
 dotenv.config({ path: ".env" });
 // import logger from "./utils/logger";
 connectDB();
@@ -28,18 +28,11 @@ app.use(
   })
 );
 
-app.use(
-  cors({
-    origin: "https://yourdomain.com",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev")); 
-} 
-
+  app.use(morgan("dev"));
+}
 
 app.use(express.json());
 
@@ -66,12 +59,17 @@ app.use("/api/v1/address", addressRoutes);
 app.use("/api/v1/offer", offerRoutes);
 app.use("/api/v1/cart", cartRoutes);
 
-
-
 app.use(notfound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
+  console.log(` Server running on port ${PORT}`);
 });
+
+
+
+
+
+
+export default app;
