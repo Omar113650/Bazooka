@@ -49,6 +49,10 @@ import addressRoutes from "./Routes/AddressRoutes.js";
 import offerRoutes from "./Routes/OfferRoutes.js";
 import cartRoutes from "./Routes/CartRoutes.js";
 
+app.get('/',(req,res)=>{
+  res.send('Hello World from Root Route')
+});
+
 app.use("/api/payment", paymentRoutes);
 app.use("/api", webhookRoute);
 app.use("/api/v1/auth", authRoutes);
@@ -62,8 +66,11 @@ app.use("/api/v1/cart", cartRoutes);
 app.use(notfound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`✅ Server running on port ${PORT}`);
+// });
 
+
+
+export default app;
