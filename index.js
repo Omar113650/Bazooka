@@ -62,10 +62,10 @@ app.use("/api/v1/cart", cartRoutes);
 app.use(notfound);
 app.use(errorHandler);
 
-const PORT = 8080||process.env.PORT ;
-app.listen(PORT, () => {
-  console.log(` Server running on port ${PORT}`);
-});
+// const PORT = 8080||process.env.PORT ;
+// app.listen(PORT, () => {
+//   console.log(` Server running on port ${PORT}`);
+// });
 
 
 
