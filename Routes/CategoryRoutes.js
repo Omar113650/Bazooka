@@ -12,9 +12,9 @@ import{VerifyTokenAdmin} from "../middleware/VerifyToken.js"
 const router = express.Router();
 
 router.get("/count/total", Count);
-
-router.post("/add-category",VerifyTokenAdmin, CreateCategory);
-router.get("/get-category",VerifyTokenAdmin, GetCategory);
+// VerifyTokenAdmin
+router.post("/add-category", CreateCategory);
+router.get("/get-category", GetCategory);
 router.put("/update-category/:categoryId",VerifyTokenAdmin ,ValidatedID,UpdateCategory);
 router.delete("/delete-category/:categoryId", VerifyTokenAdmin,ValidatedID,DeleteCategory);
 
