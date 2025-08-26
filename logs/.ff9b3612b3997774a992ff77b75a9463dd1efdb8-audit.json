@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\BAZOOKA\\logs\\.ff9b3612b3997774a992ff77b75a9463dd1efdb8-audit.json",
+    "files": [
+        {
+            "date": 1755192569983,
+            "name": "D:\\BAZOOKA\\logs\\app-2025-08-14.log",
+            "hash": "1365a383e6e6ea91d3de20200522a918c5ae199ae1dd607441b998169c5796ca"
+        },
+        {
+            "date": 1755361328665,
+            "name": "D:\\BAZOOKA\\logs\\app-2025-08-16.log",
+            "hash": "1d1f56dd3194221b9c6a268cadea5e386bb2d1519e4bd7eed236a12d363befc8"
+        },
+        {
+            "date": 1755978701162,
+            "name": "D:\\BAZOOKA\\logs\\app-2025-08-23.log",
+            "hash": "a8903e000483fb342a07e53790b878510e3f804c3c68096ef6ca275a9d4ddeda"
+        },
+        {
+            "date": 1756061836970,
+            "name": "D:\\BAZOOKA\\logs\\app-2025-08-24.log",
+            "hash": "b735be25a7c4be9aab26ca47c575befc1040293b55fa790659301276712e6775"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Firebase Phone Auth Test</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <h2>Firebase Phone Auth</h2>
+
+  <div id="recaptcha-container"></div>
+
+  <input type="text" id="phoneNumber" placeholder="+2010xxxxxxx" />
+  <button onclick="sendCode()">إرسال الكود</button>
+
+  <br /><br />
+
+  <input type="text" id="verificationCode" placeholder="اكتب الكود هنا" />
+  <button onclick="verifyCode()">تحقق</button>
+
+  <script>
+    // إعداد Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDEQ1sERWYid2a-UrFtCtp-0pTAe4hxN3c",
+      authDomain: "bazooka-d024b.firebaseapp.com",
+      projectId: "bazooka-d024b",
+      storageBucket: "bazooka-d024b.appspot.com",
+      messagingSenderId: "90815695142",
+      appId: "1:90815695142:web:xxxxxxxxxxxxxxxxxx" // لو مش معاك ال-App ID سيبه فاضي مش هيأثر في التجربة
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+   
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+      'size': 'normal',
+      'callback': (response) => {
+        console.log("reCAPTCHA solved!");
+      }
+    });
+
+
+    function sendCode() {
+      const phoneNumber = document.getElementById("phoneNumber").value;
+      const appVerifier = window.recaptchaVerifier;
+
+      auth.signInWithPhoneNumber(phoneNumber, appVerifier)
+        .then((confirmationResult) => {
+          window.confirmationResult = confirmationResult;
+          alert("تم إرسال الكود بنجاح");
+        }).catch((error) => {
+          alert("حدث خطأ: " + error.message);
+        });
+    }
+
+  
+    function verifyCode() {
+      const code = document.getElementById("verificationCode").value;
+      window.confirmationResult.confirm(code)
+        .then((result) => {
+          const user = result.user;
+          alert("تم تسجيل الدخول بنجاح: " + user.phoneNumber);
+        }).catch((error) => {
+          alert("الكود غير صحيح أو منتهي: " + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
